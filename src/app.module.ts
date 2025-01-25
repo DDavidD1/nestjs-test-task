@@ -7,7 +7,9 @@ import { CacheModule } from '@nestjs/cache-manager';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    CacheModule.register(),
+    CacheModule.register({
+        isGlobal: true
+    }),
     UserModule,
     TransactionModule
   ],
